@@ -23,20 +23,31 @@
     </header>
 
     <div class="content_wraper">
-        <div class="content">
-            <div class="dishes">
-                <div class="dishes_data">
-                    <h3>Name</h3>
-                    <p>Beschreibung</p>
-                    <p>Preis</p>
-                </div>
-                <button id="add_dishes" class="add_dishes">+</button>
-            </div>
+        <div id="content" class="content">
+
         </div>
         
         <div class="basket_wraper">
             <div class="basket">
+
                     <h2>Warenkorb</h2>
+
+                    <div class="seperator"></div>
+
+                    <div id="basket_dishes"  class="basket_dishes">
+
+                    </div>
+
+                    <div class="seperator"></div>
+
+                    <section class="total_amount_section">
+                        <table>
+                            <tr><th>Zwischensumme</th><td id="sub_sum"></td></tr>
+                            <tr><th>Lieferkosten</th><td>5.00€</td></tr>
+                            <tr><th>Gesamt</th><td id="total_price"></td></tr>
+                        </table>
+                    </section>
+
             </div>
         </div>
     </div>

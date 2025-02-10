@@ -40,14 +40,8 @@ header img{
     padding: 8px;
 }
 
-.add_dishes{
-    border: solid 0.5px rgba(0, 0, 0, 0.3);
-    background-color: white;
-    cursor: pointer;
-}
-
-.add_dishes :hover{
-    background-color: #FF8B00;
+.dishes_price{
+    color: #FF8B00;
 }
 
 .basket_wraper{
@@ -63,9 +57,45 @@ header img{
     top: 0;
 }
 
+.basket h2{
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.chosen_section{
+    margin-bottom: 16px;
+}
+
+.edit_section{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+table{
+    width: 100%;
+}
+
+tr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 footer{
     height: 64px;
+    color: white;
+    background-color: #04242E;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+footer a{
+    color: white;
+}
+
+footer a:hover{
+    color: #FF8B00;
 }
