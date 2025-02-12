@@ -2,7 +2,8 @@
 function init() {
     getFromLocalStorage();
     renderDishes();
-    renderBasket()
+    renderBasket();
+    calcSubSum();
 }
 
 function renderDishes() {
@@ -19,7 +20,7 @@ function renderBasket() {
     contentRef.innerHTML = "";
 
     for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
-        if(dishes[indexDish].amout != 0) {
+        if(dishes[indexDish].quantity != 0) {
             contentRef.innerHTML += getBasketTemplate(indexDish);
         }
     } 
@@ -38,7 +39,6 @@ function getFromLocalStorage() {
 
 function addOneDish(indexDish) {
     dishes[indexDish].quantity += 1;
-    calcSubSum();
     calcTotalPriceDish(indexDish);
     saveToLocalStorage();
     renderBasket()
@@ -46,7 +46,6 @@ function addOneDish(indexDish) {
 
 function deleteOneDish(indexDish) {
     dishes[indexDish].quantity -= 1;
-    calcSubSum();
     calcTotalPriceDish(indexDish);
     saveToLocalStorage();
     renderBasket()
@@ -54,7 +53,6 @@ function deleteOneDish(indexDish) {
 
 function deleteAllDishes(indexDish) {
     dishes[indexDish].quantity = 0;
-    calcSubSum();
     calcTotalPriceDish(indexDish);
     saveToLocalStorage();
     renderBasket()
@@ -62,7 +60,10 @@ function deleteAllDishes(indexDish) {
 
 function calcTotalPriceDish(indexDish) {
     let amoutRef = dishes[indexDish].quantity * dishes[indexDish].price;
+    amoutRef = formatNumsToString(amoutRef);
+    dishes[indexDish].amout = "";
     dishes[indexDish].amout = amoutRef;
+    calcSubSum();
 }
 
 function calcSubSum() {
@@ -70,12 +71,11 @@ function calcSubSum() {
     contentRef.innerHTML = "";
 
     let subSumRef =  0;
-
     for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
-        subSumRef += dishes[indexDish].amout;
+        let string = dishes[indexDish].amout;
+        subSumRef += formatStringsToNums(string);
     }
-    contentRef.innerHTML = subSumRef + "€";
-
+    ifBasketEmpty(subSumRef, contentRef);
     calcTotalPrice(subSumRef);
 }
 
@@ -83,6 +83,50 @@ function calcTotalPrice(subSumRef) {
     let contentRef = document.getElementById("total_price");
     contentRef.innerHTML = "";
 
-    let totalPriceRef = subSumRef + 5;
-    contentRef.innerHTML = totalPriceRef + "€";
+    let totalPriceRef = subSumRef + setDeliveryPrice(subSumRef);
+    if(subSumRef == 0) {
+        contentRef.innerHTML = "-";
+    } else {
+        contentRef.innerHTML = formatNumsToString(totalPriceRef) + "€";
+    }
+}
+
+function formatNumsToString(num) {
+    let numRef = parseFloat(num);  
+    numRef = numRef.toFixed(2);
+    numRef = numRef.toString();
+    numRef = numRef.replace(".", ",");
+    num = numRef;
+    return num;
+}
+
+function formatStringsToNums(string) {
+    let stringRef = string;
+    stringRef = stringRef.toString();    
+    stringRef = stringRef.replace(",", ".");
+    stringRef = parseFloat(stringRef);
+    string = stringRef;
+    return string;
+}
+
+function ifBasketEmpty(sumRef, contentRef) {
+    if(sumRef == 0) {
+        contentRef.innerHTML = "-";
+    } else {
+        contentRef.innerHTML = formatNumsToString(sumRef) + "€";
+    }
+}
+
+function setDeliveryPrice(subSumRef) {
+    let contentRef = document.getElementById("delivery_price");
+    contentRef.innerHTML = "";
+    if(subSumRef >= 29) {
+        let deliveryCost = 0.00;
+        contentRef.innerHTML = formatNumsToString(deliveryCost) + "€";
+        return deliveryCost;
+    } else {
+        let deliveryCost = 5.00;
+        contentRef.innerHTML = formatNumsToString(deliveryCost) + "€";
+        return deliveryCost;
+    }
 }
