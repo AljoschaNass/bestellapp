@@ -7,7 +7,7 @@ function init() {
 }
 
 function renderDishes() {
-    let contentRef = document.getElementById("content");
+    let contentRef = document.getElementById("content_dishes");
     contentRef.innerHTML = "";
 
     for (let indexDish = 0; indexDish < dishes.length; indexDish++) {

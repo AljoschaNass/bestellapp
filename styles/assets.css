@@ -26,10 +26,17 @@
 }
 
 button{
+    height: 24px;
+    width: 24px;
     color: #FF8B00;
     border: solid 0.5px rgba(0, 0, 0, 0.3);
     background-color: white;
     cursor: pointer;
+    font-size: 24px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button :hover{
