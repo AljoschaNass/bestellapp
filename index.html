@@ -23,13 +23,14 @@
         <img src="./assets/icons/Logo/Logo.png" alt="Bestellapp-Logo">
     </header>
 
-    <div class="content_wraper">
+    <section class="content_wraper">
 
         <div id="content" class="content">
 
 
             <div class="restaurant_info">
-                <img src="./assets/img/gyosa_mandu.jpg" alt="gyosa_mandu">
+                <img class="atf_img" src="./assets/img/gyosa_mandu.jpg" alt="gyosa_mandu">
+                <img class="restaurant_logo" src="./assets/img/sugar_cane.png" alt="sugar_cane">
                 <h1>Bamboo Bliss</h1>
                 <a href="https://www.google.de" target="_blank">Bewertung 4.8 / 5.0</a>
             </div>
@@ -38,9 +39,8 @@
             </div>
 
         </div>
-
         
-        <div class="basket_wraper">
+        <div id="basket_wraper" class="basket_wraper">
             <div class="basket">
 
                     <h2>Warenkorb</h2>
@@ -52,19 +52,35 @@
 
                     <div class="seperator"></div>
 
-                    <section class="total_amount_section">
+                    <div class="total_amount_section">
                         <table>
                             <tr><th>Zwischensumme</th><td id="sub_sum"></td></tr>
                             <tr><th>Lieferkosten</th><td id="delivery_price"></td></tr>
                             <tr><th>Gesamt</th><td id="total_price"></td></tr>
                         </table>
 
-                        <button>Bezahlen</button>
-                    </section>
+                        <button class="basket_pay_button">Bezahlen</button>
+                    </div>
 
             </div>
         </div>
-    </div>
+
+        <div id="basket_responsive" class="basket_responsive basket_responsive_down">
+            <button id="basket_pay_button" class="basket_pay_button" onclick="toggleOverlay()">Warenkorb</button>
+            <div id="basket_dishes_resp"  class="basket_dishes">
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="total_amount_section">
+                <table>
+                    <tr><th>Zwischensumme</th><td id="sub_sum_resp"></td></tr>
+                    <tr><th>Lieferkosten</th><td id="delivery_price_resp"></td></tr>
+                    <tr><th>Gesamt</th><td id="total_price_resp"></td></tr>
+                </table>
+        </div>
+
+    </section>
 
     <footer>
         <p>Copyright 2025 Aljoscha Naß</p>

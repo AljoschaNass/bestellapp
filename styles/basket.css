@@ -28,6 +28,13 @@
     align-items: center;
 }
 
+.dish_up_and_down{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+}
+
 table{
     width: 100%;
 }
@@ -38,26 +45,68 @@ table{
     align-items: center;
 }
 
-.total_amount_section button{
-    width: 180px;
-    height: 36px;
-    font-size: 24px;
-    margin-top: 12px;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #FF8B00;
-    color: white;
-}
-
-.total_amount_section button:hover{
-    background-color: #ff9f2a;
-}
-
 tr{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+.basket_responsive{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    background-color: white;
+    cursor: pointer;
+}
+
+.basket_responsive:not(.basket_pay_button){
+    padding: 8px;
+}
+
+.basket_pay_button{
+    height: 36px;
+    width: calc(100% - 16px);
+    margin: 8px;
+    background-color: #FF8B00;
+    color: white;
+    cursor: pointer;
+}
+
+.basket_pay_button:hover{
+    background-color: #ff9f2a;
+}
+
+@media(max-width: 800px){
+    .basket_wraper{
+        display: none;
+        width: 0;
+    }
+    .content{
+        width: 100%;
+    }
+
+    .restaurant_logo{
+        top: 160px;
+        left: calc((100% / 2) - 32px);
+    }
+
+    .basket_responsive{
+        display: flex;
+    }
+
+    .basket_responsive_down{
+        top: calc(100% - 60px);
+    }
+
+    .basket_responsive_top{
+        top: 0;
+    }
+
 }

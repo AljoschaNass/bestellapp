@@ -16,9 +16,11 @@ function getBasketTemplate(indexDish) {
             <section class="chosen_section">
                 <h3>${dishes[indexDish].name}</h3>
                 <div class="edit_section">
-                    <button onclick="deleteOneDish(${indexDish})">-</button>
-                    <p>${dishes[indexDish].quantity}x</p>
-                    <button onclick="addOneDish(${indexDish})">+</button>
+                    <div class="dish_up_and_down">
+                        <button onclick="deleteOneDish(${indexDish})">-</button>
+                        <p>${dishes[indexDish].quantity}x</p>
+                        <button onclick="addOneDish(${indexDish})">+</button>
+                    </div>
                     <p>${dishes[indexDish].amout}€</p>
                     <button onclick="deleteAllDishes(${indexDish})">T</button>
                 </div>

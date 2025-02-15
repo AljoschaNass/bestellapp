@@ -29,11 +29,23 @@ header img{
     color: #FF8B00;
 }
 
-.restaurant_info img{
+.atf_img{
     width: 100%;
     height: 128px;
     object-fit: cover;
     padding: 0;
+}
+
+.restaurant_logo{
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 32px;
+    background-color: whitesmoke;
+    padding: 2px;
+    position: absolute;
+    top: 160px;
+    left: calc(((100% - 300px) / 2) - 32px);
 }
 
 .content_dishes{
