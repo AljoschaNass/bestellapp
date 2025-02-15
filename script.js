@@ -1,18 +1,72 @@
 
 function init() {
     getFromLocalStorage();
-    renderDishes();
-    renderBasket();
-    renderBasketResp();
+    renderAll();
     calcSubSum();
 }
 
-function renderDishes() {
-    let contentRef = document.getElementById("content_dishes");
+function renderAll() {
+    renderAppetizer();
+    renderSoup();
+    renderSushi();
+    renderChicken();
+    renderDuck();
+    renderBasket();
+    renderBasketResp();
+}
+
+function renderAppetizer() {
+    let contentRef = document.getElementById("dishes_appetizer");
     contentRef.innerHTML = "";
 
     for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
+        if(dishes[indexDish].category == "appetizer") {
             contentRef.innerHTML += getDishTemplate(indexDish);
+        }
+    } 
+}
+
+function renderSoup() {
+    let contentRef = document.getElementById("dishes_soup");
+    contentRef.innerHTML = "";
+
+    for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
+        if(dishes[indexDish].category == "soup") {
+            contentRef.innerHTML += getDishTemplate(indexDish);
+        }
+    } 
+}
+
+function renderSushi() {
+    let contentRef = document.getElementById("dishes_sushi");
+    contentRef.innerHTML = "";
+
+    for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
+        if(dishes[indexDish].category == "sushi") {
+            contentRef.innerHTML += getDishTemplate(indexDish);
+        }
+    } 
+}
+
+function renderChicken() {
+    let contentRef = document.getElementById("dishes_chicken");
+    contentRef.innerHTML = "";
+
+    for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
+        if(dishes[indexDish].category == "chicken") {
+            contentRef.innerHTML += getDishTemplate(indexDish);
+        }
+    } 
+}
+
+function renderDuck() {
+    let contentRef = document.getElementById("dishes_duck");
+    contentRef.innerHTML = "";
+
+    for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
+        if(dishes[indexDish].category == "duck") {
+            contentRef.innerHTML += getDishTemplate(indexDish);
+        }
     } 
 }
 

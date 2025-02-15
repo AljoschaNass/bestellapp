@@ -52,6 +52,13 @@ header img{
     padding: 16px;
 }
 
+.dish_catogory_img{
+    width: 100%;
+    height: 92px;
+    object-fit: cover;
+    margin-top: 12px;
+}
+
 .dishes{
     border: solid 0.5px rgba(0, 0, 0, 0.3);
     margin: 12px 0;
@@ -89,4 +96,16 @@ footer a{
 
 footer a:hover{
     color: #FF8B00;
+}
+
+@media(max-width:600px) {
+    .content_dishes{
+        padding: 12px 4px;
+    }
+
+    .dish_catogory_img{
+        height: 72px;
+        object-fit: cover;
+        margin-top: 10px;
+    }
 }
