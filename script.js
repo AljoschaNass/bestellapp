@@ -232,12 +232,20 @@ function payBasket() {
 
 function addPayMessage() {
     let payMessageRef = document.getElementById("btn_pay_message");
+    let payMessageRespRef = document.getElementById("btn_pay_message_resp");
+
     payMessageRef.classList.add("d_flex");
     payMessageRef.classList.remove("d_none");
+    payMessageRespRef.classList.add("d_flex");
+    payMessageRespRef.classList.remove("d_none");
 }
 
 function removePayMessage() {
     let payMessageRef = document.getElementById("btn_pay_message");
+    let payMessageRespRef = document.getElementById("btn_pay_message_resp");
+
     payMessageRef.classList.remove("d_flex");
     payMessageRef.classList.add("d_none");
+    payMessageRespRef.classList.remove("d_flex");
+    payMessageRespRef.classList.add("d_none");
 }

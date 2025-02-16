@@ -92,7 +92,9 @@
                         </table>
 
                         <button onclick="payBasket()" class="basket_pay_button">Bezahlen</button>
-                        <button id="btn_pay_message" class="btn_pay_message d_none" onclick="removePayMessage()">Vielen Dank für Ihre Testbestellung. Klicken Sie hier um noch mehr zubestellen..</button>
+                        <button id="btn_pay_message" class="btn_pay_message d_none" onclick="removePayMessage()">
+                            Vielen Dank für Ihre Testbestellung. Klicken Sie hier um noch mehr zubestellen..
+                        </button>
                     </div>
 
             </div>
@@ -111,6 +113,10 @@
                     <tr><th>Lieferkosten</th><td id="delivery_price_resp"></td></tr>
                     <tr><th>Gesamt</th><td id="total_price_resp"></td></tr>
                 </table>
+                <button onclick="payBasket()" class="basket_pay_button">Bezahlen</button>
+                <button id="btn_pay_message_resp" class="btn_pay_message d_none" onclick="removePayMessage()">
+                    Vielen Dank für Ihre Testbestellung. Klicken Sie hier um noch mehr zubestellen..
+                </button>
         </div>
 
     </section>
