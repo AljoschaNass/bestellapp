@@ -6,7 +6,9 @@ function getDishTemplate(indexDish) {
                     <p class="dishes_ndescription">${dishes[indexDish].description}</p>
                     <p class="dishes_price">${dishes[indexDish].price}€</p>
                 </div>
-                <button id="add_dishes" class="add_dishes" onclick="addOneDish(${indexDish})">+</button>
+                <button id="add_dishes" class="btn_dish" onclick="addOneDish(${indexDish})">
+                    <img src="./assets/icons/plus_icon.png" alt="trash">
+                </button>
             </div>
     `;
 }
@@ -17,12 +19,18 @@ function getBasketTemplate(indexDish) {
                 <h3>${dishes[indexDish].name}</h3>
                 <div class="edit_section">
                     <div class="dish_up_and_down">
-                        <button onclick="deleteOneDish(${indexDish})">-</button>
+                        <button class="btn_basket" onclick="deleteOneDish(${indexDish})">
+                            <img src="./assets/icons/minus_icon.png" alt="trash">
+                        </button>
                         <p>${dishes[indexDish].quantity}x</p>
-                        <button onclick="addOneDish(${indexDish})">+</button>
+                        <button class="btn_basket" onclick="addOneDish(${indexDish})">
+                            <img src="./assets/icons/plus_icon.png" alt="trash">
+                        </button>
                     </div>
                     <p>${dishes[indexDish].amout}€</p>
-                    <button onclick="deleteAllDishes(${indexDish})">T</button>
+                    <button class="btn_basket" onclick="deleteAllDishes(${indexDish})">
+                        <img src="./assets/icons/trash_icon.png" alt="trash">
+                    </button>
                 </div>
             </section>
     `;

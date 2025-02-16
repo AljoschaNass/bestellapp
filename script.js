@@ -104,6 +104,7 @@ function getFromLocalStorage() {
 }
 
 function addOneDish(indexDish) {
+    removePayMessage();
     dishes[indexDish].quantity += 1;
     calcTotalPriceDish(indexDish);
     saveToLocalStorage();
@@ -216,4 +217,27 @@ function toggleOverlay() {
     let overlayRef = document.getElementById("basket_responsive");
     overlayRef.classList.toggle("basket_responsive_down");
     overlayRef.classList.toggle("basket_responsive_top");
+}
+
+function payBasket() {
+    for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
+        dishes[indexDish].quantity = 0;
+        calcTotalPriceDish(indexDish);
+    }
+    saveToLocalStorage();
+    renderBasket();
+    renderBasketResp();
+    addPayMessage();
+}
+
+function addPayMessage() {
+    let payMessageRef = document.getElementById("btn_pay_message");
+    payMessageRef.classList.add("d_flex");
+    payMessageRef.classList.remove("d_none");
+}
+
+function removePayMessage() {
+    let payMessageRef = document.getElementById("btn_pay_message");
+    payMessageRef.classList.remove("d_flex");
+    payMessageRef.classList.add("d_none");
 }

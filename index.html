@@ -35,28 +35,36 @@
                 <a href="https://www.google.de" target="_blank">Bewertung 4.8 / 5.0</a>
             </div>
 
+            <div class="quick_links">
+                <a href="#appetizer_img">Vorspeisen</a>
+                <a href="#soup_img">Suppen</a>
+                <a href="#sushi_img">Sushi</a>
+                <a href="#chicken_img">Hühnchengerichte</a>
+                <a href="#duck_img">Entengerichte</a>
+            </div>
+
             <div id="content_dishes" class="content_dishes">
-                <img src="./assets/img/category_appetizer.jpg" alt="appetizer" class="dish_catogory_img">
+                <img id="appetizer_img" src="./assets/img/category_appetizer.jpg" alt="appetizer" class="dish_catogory_img">
                 <h2>Vorspeisen</h2>
                 <div id="dishes_appetizer" class="dishes_appetizer dish_catogory">
                 </div>
 
-                <img src="./assets/img/category_soup.jpg" alt="appetizer" class="dish_catogory_img">
+                <img id="soup_img" src="./assets/img/category_soup.jpg" alt="soup" class="dish_catogory_img">
                 <h2>Suppen</h2>
                 <div id="dishes_soup" class="dishes_soup dish_catogory">
                 </div>
 
-                <img src="./assets/img/category_sushi.jpg" alt="appetizer" class="dish_catogory_img">
+                <img id="sushi_img" src="./assets/img/category_sushi.jpg" alt="sushi" class="dish_catogory_img">
                 <h2>Sushi</h2>
                 <div id="dishes_sushi" class="dishes_sushi dish_catogory">
                 </div>
 
-                <img src="./assets/img/category_chicken.jpg" alt="appetizer" class="dish_catogory_img">
-                <h2>Hühnergerichte</h2>
+                <img id="chicken_img" src="./assets/img/category_chicken.jpg" alt="chicken" class="dish_catogory_img">
+                <h2>Hühnchengerichte</h2>
                 <div id="dishes_chicken" class="dishes_chicken dish_catogory">
                 </div>
 
-                <img src="./assets/img/category_duck.jpg" alt="appetizer" class="dish_catogory_img">
+                <img id="duck_img" src="./assets/img/category_duck.jpg" alt="duck" class="dish_catogory_img">
                 <h2>Entengerichte</h2>
                 <div id="dishes_duck" class="dishes_duck dish_catogory">
                 </div>
@@ -83,7 +91,8 @@
                             <tr><th>Gesamt</th><td id="total_price"></td></tr>
                         </table>
 
-                        <button class="basket_pay_button">Bezahlen</button>
+                        <button onclick="payBasket()" class="basket_pay_button">Bezahlen</button>
+                        <button id="btn_pay_message" class="btn_pay_message d_none" onclick="removePayMessage()">Vielen Dank für Ihre Testbestellung. Klicken Sie hier um noch mehr zubestellen..</button>
                     </div>
 
             </div>

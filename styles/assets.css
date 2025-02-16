@@ -25,7 +25,12 @@
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-button{
+button img{
+    height: 20px;
+    width: 20px;
+}
+
+.btn_dish{
     height: 24px;
     width: 24px;
     color: #FF8B00;
@@ -39,6 +44,22 @@ button{
     align-items: center;
 }
 
-button :hover{
-    background-color: #FF8B00;
+.btn_dish :hover{
+    background-color: #ff8c0028;
+}
+
+.btn_basket{
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_basket :hover{
+    background-color: #ff8c0028;
 }

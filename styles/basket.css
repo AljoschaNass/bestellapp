@@ -17,6 +17,11 @@
     margin-bottom: 12px;
 }
 
+.basket_dishes{
+    overflow-y: auto;
+    max-height: calc(100vh - 180px);
+}
+
 .chosen_section{
     margin-bottom: 16px;
 }
@@ -77,10 +82,21 @@ tr{
     background-color: #FF8B00;
     color: white;
     cursor: pointer;
+    border: 0;
+    font-size: 24px;
 }
 
 .basket_pay_button:hover{
     background-color: #ff9f2a;
+}
+
+.btn_pay_message{
+    text-align: center;
+}
+
+.btn_pay_message:hover{
+    background-color: #ff8c0028;
+    cursor: pointer;
 }
 
 @media(max-width: 800px){
