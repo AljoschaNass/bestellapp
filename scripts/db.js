@@ -208,3 +208,26 @@ let dishes = [
         "amout": 0
     },
 ];
+
+let renderRef = [
+    {
+        "id":"dishes_appetizer",
+        "categoryRef":"appetizer"
+    },
+    {
+        "id":"dishes_soup",
+        "categoryRef":"soup"
+    },
+    {
+        "id":"dishes_sushi",
+        "categoryRef":"sushi"
+    },
+    {
+        "id":"dishes_chicken",
+        "categoryRef":"chicken"
+    },
+    {
+        "id":"dishes_duck",
+        "categoryRef":"duck"
+    }
+];

@@ -6,65 +6,23 @@ function init() {
 }
 
 function renderAll() {
-    renderAppetizer();
-    renderSoup();
-    renderSushi();
-    renderChicken();
-    renderDuck();
+    renderAllDishes();
     renderBasket();
     renderBasketResp();
 }
 
-function renderAppetizer() {
-    let contentRef = document.getElementById("dishes_appetizer");
-    contentRef.innerHTML = "";
-
-    for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
-        if(dishes[indexDish].category == "appetizer") {
-            contentRef.innerHTML += getDishTemplate(indexDish);
-        }
-    } 
+function renderAllDishes() {
+    for (let index = 0; index < renderRef.length; index++) {
+        renderDishes(renderRef[index].id, renderRef[index].categoryRef);
+    }
 }
 
-function renderSoup() {
-    let contentRef = document.getElementById("dishes_soup");
+function renderDishes(id, categoryRef) {
+    let contentRef = document.getElementById(id);
     contentRef.innerHTML = "";
 
     for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
-        if(dishes[indexDish].category == "soup") {
-            contentRef.innerHTML += getDishTemplate(indexDish);
-        }
-    } 
-}
-
-function renderSushi() {
-    let contentRef = document.getElementById("dishes_sushi");
-    contentRef.innerHTML = "";
-
-    for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
-        if(dishes[indexDish].category == "sushi") {
-            contentRef.innerHTML += getDishTemplate(indexDish);
-        }
-    } 
-}
-
-function renderChicken() {
-    let contentRef = document.getElementById("dishes_chicken");
-    contentRef.innerHTML = "";
-
-    for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
-        if(dishes[indexDish].category == "chicken") {
-            contentRef.innerHTML += getDishTemplate(indexDish);
-        }
-    } 
-}
-
-function renderDuck() {
-    let contentRef = document.getElementById("dishes_duck");
-    contentRef.innerHTML = "";
-
-    for (let indexDish = 0; indexDish < dishes.length; indexDish++) {
-        if(dishes[indexDish].category == "duck") {
+        if(dishes[indexDish].category == categoryRef) {
             contentRef.innerHTML += getDishTemplate(indexDish);
         }
     } 
@@ -217,6 +175,10 @@ function toggleOverlay() {
     let overlayRef = document.getElementById("basket_responsive");
     overlayRef.classList.toggle("basket_responsive_down");
     overlayRef.classList.toggle("basket_responsive_top");
+
+    let contentRef = document.getElementById("content");
+    contentRef.classList.toggle("d_flex");
+    contentRef.classList.toggle("d_none");
 }
 
 function payBasket() {

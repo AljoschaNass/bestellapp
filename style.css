@@ -19,6 +19,8 @@ header img{
 
 .content{
     width: calc(100% - 300px);
+    display: flex;
+    flex-direction: column;
 }
 
 .restaurant_info h1, a{
@@ -55,10 +57,12 @@ header img{
     align-items: center;
     width: 100%;
     margin-top: 12px;
+    padding: 12px 0;
+    flex-wrap: wrap;
 }
 
 .quick_links a{
-    padding: 12px;
+    padding: 0 12px;
 }
 
 .quick_links a:hover{
@@ -105,6 +109,7 @@ footer{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 60px;
 }
 
 footer a{
@@ -126,3 +131,4 @@ footer a:hover{
         margin-top: 10px;
     }
 }
+
