@@ -179,6 +179,10 @@ function toggleOverlay() {
     let contentRef = document.getElementById("content");
     contentRef.classList.toggle("d_flex");
     contentRef.classList.toggle("d_none");
+
+    let basketRef = document.getElementById("basket_dishes_resp");
+    basketRef.classList.toggle("d_flex");
+    basketRef.classList.toggle("d_none");
 }
 
 function payBasket() {

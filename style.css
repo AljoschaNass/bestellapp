@@ -109,7 +109,9 @@ footer{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 60px;
+    position: relative;
+    bottom: 0;
+    left: 0;
 }
 
 footer a{
@@ -118,6 +120,13 @@ footer a{
 
 footer a:hover{
     color: #FF8B00;
+}
+
+@media(max-width:800px) {
+    footer{
+        margin-bottom: 60px;
+        position: static;
+    }
 }
 
 @media(max-width:600px) {
